@@ -30,6 +30,8 @@ digraph G {
   //== input/output node setup ==//
   node [ shape=box fillcolor="#f9ca24" fontname="courier bold" ];
 
+  // <INPUT/OUTPUT NODES GO HERE>
+
   //====================//
   // EDGES 
   //====================//
