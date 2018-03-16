@@ -2,7 +2,7 @@ digraph G {
 
   //== graph setup ==//
   fontsize="40"; label="\n\nDIAGNOSTIC FLOWCHART\nby Michael Edwards";
-  margin="1"; nodesep=1; ranksep=1;
+  margin="1"; nodesep=0.75; ranksep=0.75;
 
   //====================//
   // NODES
