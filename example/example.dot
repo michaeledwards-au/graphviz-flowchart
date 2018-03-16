@@ -1,0 +1,91 @@
+digraph G {
+
+  //== graph setup ==//
+  fontsize="40"; label="\n\nDIAGNOSTIC FLOWCHART\nby Michael Edwards";
+  margin="1"; nodesep=1; ranksep=1;
+
+  //====================//
+  // NODES
+  //====================//
+
+  //== base node setup ==//
+  node [ fontname="serif bold" penwidth=20 style=filled fontcolor=white color=white fontsize=20 margin=0.5 ];
+
+  //== terminal node setup ==//
+  node [ shape=oval fillcolor="#badc58" ];
+
+  start [ label="     START     " ];
+  end [ label="      END      " ];
+ 
+  //== decision node setup ==//
+  node [ shape=diamond fillcolor="#ff7979" ];
+
+  // <DECISION NODES GO HERE>
+ 
+  dec001 [ label="Does it work?" ];
+  dec002 [ label="Did you break it?" ];
+  dec003 [ label="Does anyone know?" ];
+  dec004 [ label="Can you blame someone else?" ];
+  
+  //== process node setup ==//
+  node [ shape=box fillcolor="#686de0" ];
+
+  // <PROCESS NODES GO HERE>
+ 
+  pro001 [ label="Don't mess with it" ]; 
+  pro002 [ label="You moron" ];
+  pro003 [ label="You're hosed" ];
+  pro004 [ label="Hide it" ];
+  pro005 [ label="No problem" ];
+
+  //== input/output node setup ==//
+  node [ shape=box fillcolor="#f9ca24" fontname="courier bold" ];
+
+  // <INPUT/OUTPUT NODES GO HERE>
+
+  //====================//
+  // EDGES 
+  //====================//
+
+  //== base edge setup ==//
+  edge [ color="#badc58" fontsize=20 penwidth=4 arrowsize=1.5 fontname="serif" ];
+
+  // <EDGES GO HERE>
+  
+  // start
+  start -> dec001;
+  
+  // does it work?
+  dec001 -> pro001 [ label="  Yes" ];
+  dec001 -> dec002[ label="  No" ];
+  
+  // don't mess with it
+  pro001 -> pro005;
+  
+  // did you break it?
+  dec002 -> pro002 [ label="  Yes" ];
+  dec002 -> pro005[ label="  No" ];
+  
+  // does anyone know?
+  dec003 -> dec004 [ label="  Yes" ];
+  dec003 -> pro004 [ label="  No" ];
+  
+  // you moron
+  pro002 -> dec003;
+  
+  // you're hosed
+  pro003 -> end;
+  
+  // hide it
+  pro004 -> pro005;
+  
+  // can you blame someone else?
+  dec004 -> pro005 [ label="  Yes" ];
+  dec004 -> pro003 [ label="  No" ];
+  
+  // no problem
+  pro005 -> end;
+}
+
+
+
