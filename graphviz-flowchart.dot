@@ -1,0 +1,42 @@
+digraph G {
+
+  //== graph setup ==//
+  fontsize="40"; label="\n\n<TITLE GOES HERE>\nby <AUTHOR GOES HERE>";
+  margin="1"; nodesep=1; ranksep=1;
+
+  //====================//
+  // NODES
+  //====================//
+
+  //== base node setup ==//
+  node [ fontname="serif bold" penwidth=20 style=filled fontcolor=white color=white fontsize=20 margin=0.5 ];
+
+  //== terminal node setup ==//
+  node [ shape=oval fillcolor="#badc58" ];
+
+  start [ label="     START     " ];
+  end [ label="      END      " ];
+ 
+  //== decision node setup ==//
+  node [ shape=diamond fillcolor="#ff7979" ];
+
+  // <DECISION NODES GO HERE>
+ 
+  //== process node setup ==//
+  node [ shape=box fillcolor="#686de0" ];
+
+  // <PROCESS NODES GO HERE>
+
+  //== input/output node setup ==//
+  node [ shape=box fillcolor="#f9ca24" fontname="courier bold" ];
+
+  //====================//
+  // EDGES 
+  //====================//
+
+  //== base edge setup ==//
+  edge [ color="#badc58" fontsize=20 penwidth=4 arrowsize=1.5 fontname="serif" ];
+}
+
+
+
