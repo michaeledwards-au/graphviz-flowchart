@@ -36,6 +36,8 @@ digraph G {
 
   //== base edge setup ==//
   edge [ color="#badc58" fontsize=20 penwidth=4 arrowsize=1.5 fontname="serif" ];
+
+  // <EDGES GO HERE>
 }
 
 
