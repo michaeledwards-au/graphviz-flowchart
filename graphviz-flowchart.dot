@@ -1,45 +1,57 @@
 digraph G {
 
-  //== graph setup ==//
-  fontsize="40"; label="\n\n<TITLE GOES HERE>\nby <AUTHOR GOES HERE>";
-  margin="1"; nodesep=0.75; ranksep=0.75;
-
+  //== graph setup and edge/node defaults ==//
+  fontsize="40"; margin="1"; nodesep=0.75; ranksep=0.75;
+  node [fontname="serif bold" penwidth=20 style=filled fontcolor=white color=white fontsize=20 margin=0.5];
+  edge [color="#badc58" fontsize=20 penwidth=4 arrowsize=1.5 fontname="serif"];
+  
+    // <GRAPH TITLE GOES HERE>
+    // label="\n\n TITLE OF FLOWCHART \n by Author Name ";
+  
   //====================//
   // NODES
   //====================//
 
-  //== base node setup ==//
-  node [ fontname="serif bold" penwidth=20 style=filled fontcolor=white color=white fontsize=20 margin=0.5 ];
-
   //== terminal node setup ==//
-  node [ shape=oval fillcolor="#badc58" ];
+  node [shape=oval fillcolor="#badc58"];
 
-  start [ label="     START     " ];
-  end [ label="      END      " ];
+    // <TERMINAL NODES GO HERE>
+    // te01 [label="terminal"];
  
   //== decision node setup ==//
-  node [ shape=diamond fillcolor="#ff7979" ];
+  node [shape=diamond fillcolor="#ff7979" ];
 
-  // <DECISION NODES GO HERE>
+    // <DECISION NODES GO HERE>
+    // de01 [label="decision"];
  
   //== process node setup ==//
-  node [ shape=box fillcolor="#686de0" ];
+  node [shape=box fillcolor="#686de0" ];
 
-  // <PROCESS NODES GO HERE>
+    // <PROCESS NODES GO HERE>
+    // pr01 [label="process"];
 
   //== input/output node setup ==//
-  node [ shape=box fillcolor="#f9ca24" fontname="courier bold" ];
+  node [shape=box fillcolor="#f9ca24" fontname="courier bold" ];
 
-  // <INPUT/OUTPUT NODES GO HERE>
+    // <INPUT/OUTPUT NODES GO HERE>
+    // io01 [label="input/output"];
 
   //====================//
   // EDGES 
   //====================//
 
-  //== base edge setup ==//
-  edge [ color="#badc58" fontsize=20 penwidth=4 arrowsize=1.5 fontname="serif" ];
-
-  // <EDGES GO HERE>
+    // <TERMINAL EDGES GO HERE>
+    // te01 -> de01;
+ 
+    // <DECISION NODES GO HERE>
+    // de01 -> io01 [label=" yes "];
+    // de01 -> pr01 [label=" no "];
+  
+    // <PROCESS NODES GO HERE>
+    // pr01 -> io01;
+  
+    // <INPUT/OUTPUT NODES GO HERE>
+    // io01 -> te01;
 }
 
 
