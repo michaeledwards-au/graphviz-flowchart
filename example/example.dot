@@ -1,58 +1,73 @@
 digraph G {
 
-  //== graph setup and edge/node defaults ==//
-  fontsize="40"; margin="1"; nodesep=0.75; ranksep=0.75;
-  node [fontname="serif bold" penwidth=20 style=filled fontcolor=white color=white fontsize=20 margin=0.5];
-  edge [color="#badc58" fontsize=20 penwidth=4 arrowsize=1.5 fontname="serif"];
-  
-    // <GRAPH TITLE GOES HERE>
-    label="\n\n TITLE OF FLOWCHART \n by Author Name ";
-  
-  //====================//
-  // NODES
-  //====================//
+//============================================================================//
+// GRAPH
+//============================================================================//
 
-  //== terminal node setup ==//
-  node [shape=oval fillcolor="#badc58"];
+// graph setup
+fontsize="40"; margin="1"; nodesep="1"; ranksep="1"; splines="ortho";
 
-    // <TERMINAL NODES GO HERE>
-    te01 [label="terminal"];
+// default node setup
+node [color=white fontcolor="white" fontname="serif bold" fontsize="20"
+fixedsize="true" height="2" margin="0.5" penwidth="20" style="filled"
+width="4"];
+
+// default edge setup
+edge [arrowsize="1.5" color="#badc58" fontname="serif"fontsize="20" 
+penwidth="4"];
+  
+// [GRAPH TITLE]--------------------------------------------------------------//
+
+label="\n\n <TITLE> \n by <AUTHOR> ";
+  
+//============================================================================//
+// NODES
+//============================================================================//
+
+// terminal node setup
+node [fillcolor="#badc58" shape="oval"];
+  
+// [TERMINAL NODES]-----------------------------------------------------------//     
+  
+te0101 [label="<LABEL>"];
+  
+//----------------------------------------------------------------------------//
  
-  //== decision node setup ==//
-  node [shape=diamond fillcolor="#ff7979" ];
+// decision node setup
+node [fillcolor="#ff7979" height="2.25" shape="diamond" width="4.5"];
 
-    // <DECISION NODES GO HERE>
-    de01 [label="decision"];
+// [DECISION NODES]-----------------------------------------------------------//     
+
+de0101 [label="<LABEL>"];
+
+//----------------------------------------------------------------------------//
  
-  //== process node setup ==//
-  node [shape=box fillcolor="#686de0" ];
+// process node setup
+node [fillcolor="#686de0" height="2" shape="box" width="4"];
 
-    // <PROCESS NODES GO HERE>
-    pr01 [label="process"];
+// [PROCESS NODES]------------------------------------------------------------//     
 
-  //== input/output node setup ==//
-  node [shape=box fillcolor="#f9ca24" fontname="courier bold" ];
+pr0101 [label="<LABEL>"];
 
-    // <INPUT/OUTPUT NODES GO HERE>
-    io01 [label="input/output"];
-
-  //====================//
-  // EDGES 
-  //====================//
-
-    // <TERMINAL EDGES GO HERE>
-    te01 -> de01;
+//----------------------------------------------------------------------------//
  
-    // <DECISION NODES GO HERE>
-    de01 -> io01 [label=" yes "];
-    de01 -> pr01 [label=" no "];
-  
-    // <PROCESS NODES GO HERE>
-    pr01 -> io01;
-  
-    // <INPUT/OUTPUT NODES GO HERE>
-    io01 -> te01;
+// input/output node setup
+node [fillcolor="#f9ca24" fontname="courier bold" shape="box"];
+
+// [INPUT/OUTPUT NODES]-------------------------------------------------------//
+
+io0101 [label="<LABEL>"];
+
+//----------------------------------------------------------------------------//          
+
+//============================================================================//
+// EDGES 
+//============================================================================//
+
+te0101 -> pr0101;
+pr0101 -> de0101;
+de0101 -> io0101;
+
+//============================================================================//
 }
-
-
 
